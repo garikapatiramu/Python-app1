@@ -1,0 +1,18 @@
+FROM ubuntu:16.04
+
+LABEL AUTHOR="ramu Garikapati"
+LABEL APP_TIER="Front END"
+
+RUN apt update
+RUN apt install apache2 -y
+
+
+WORKDIR  /var/www/html/
+
+copy index.html .
+copy ports.conf /etc/apache2/
+copy 000-default.conf /etc/apache2/sites-enabled/
+expose 9090
+
+CMD apachectl -D FOREGROUND
+~
