@@ -7,4 +7,8 @@ CMD ["echo","HARI"]
 
 CMD ["echo","RAVI"]
 
--------CMD ["echo","HARI","RAMU"]
+-------CMD ["echo","HARI","RAMU"]   //executable form
+----- CMD echo HARI RAVI     //shell form
+-----below are mixed with executable and shell form
+CMD echo HARI
+CMD ["echo","RAVI"]
