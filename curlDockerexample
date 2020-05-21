@@ -1,0 +1,15 @@
+FROM ubuntu:16.04
+
+LABEL AUTHOR="ramu Garikapati"
+LABEL APP_TIER="Front END"
+
+ARG user_name
+ARG password
+
+RUN apt update
+RUN apt install curl -y
+
+RUN curl -u $user_name:$password http://example.com
+
+below one is the build command of the Curl
+docker build -t myapp:3.0 --build-arg user-name=admin --build-arg password=admin .
