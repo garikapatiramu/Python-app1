@@ -1,0 +1,10 @@
+FROM ubuntu:16.04
+
+LABEL AUTHOR="ramu Garikapati"
+LABEL APP_TIER="Front END"
+
+CMD ["echo","HARI"]
+
+CMD ["echo","RAVI"]
+
+-------CMD ["echo","HARI","RAMU"]
