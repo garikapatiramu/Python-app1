@@ -1,0 +1,20 @@
+FROM ubuntu:16.04
+
+LABEL AUTHOR="Hari Kammana"
+LABEL APP_TIER="Front END"
+
+RUN apt update
+RUN apt install apache2 -y
+
+WORKDIR /var/www/html/
+
+
+ADD https://downloads.apache.org/tomcat/tomcat-7/v7.0.104/bin/apache-tomcat-7.0.104-windows-x64.zip .
+ADD https://github.com/javahometech/kubernetes/blob/master/pods/pods.yml .
+
+COPY index.html .
+COPY ports.conf /etc/apache2/
+COPY 000-default.conf /etc/apache2/sites-enabled/
+EXPOSE 9090
+
+CMD apachectl -D FOREGROUND
