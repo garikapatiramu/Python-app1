@@ -1,0 +1,9 @@
+FROM alpine:latest
+
+LABEL AUTHOR="ramu Garikapati"
+LABEL APP_TIER="Front END"
+
+ENV APP_NAME="JAVA HOME"
+
+ENTRYPOINT ["ping"]
+CMD ["google.com"]
